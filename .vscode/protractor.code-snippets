@@ -108,10 +108,16 @@
     "body": "await browser.pause();",
     "description": "Protractor browser.wait"
   },
-  "browserWaitForAngular": {
+  "browserwaitForAngularEnabled": {
+    "scope": "javascript,typescript",
+    "prefix": "browser-waitForAngularEnabled",
+    "body": "await browser.waitForAngularEnabled(${1|false,true|});",
+    "description": "Protractor browser.waitForAngularEnabled"
+  },
+  "browserwaitForAngular": {
     "scope": "javascript,typescript",
     "prefix": "browser-waitForAngular",
-    "body": "await browser.waitForAngular(${1|false,true|});",
+    "body": "await browser.waitForAngular();",
     "description": "Protractor browser.waitForAngular"
   },
   "browsergetPageSource": {
@@ -126,7 +132,7 @@
   "element-by": {
     "scope": "javascript,typescript",
     "prefix": "element-by",
-    "body": "element(by.${1|id,className,tagName,name,buttonText,partialButtonText,linkText,partialLinkText|}('$2'))"
+    "body": "element(by.${1|id,css,className,tagName,name,buttonText,partialButtonText,linkText,partialLinkText|}('$2'))"
   },
   "element-by-cssContainingText": {
     "scope": "javascript,typescript",
@@ -149,7 +155,7 @@
   "elementWithClick": {
     "scope": "javascript,typescript",
     "prefix": "element-by-click",
-    "body": "await element(by.${1|id,className,tagName,name,buttonText,partialButtonText,linkText,partialLinkText|}('$2')).click();"
+    "body": "await element(by.${1|id,css,className,tagName,name,buttonText,partialButtonText,linkText,partialLinkText|}('$2')).click();"
   },
   "elementWithSendkey": {
     "scope": "javascript,typescript",
@@ -387,11 +393,17 @@
     "body": "await browser.wait($1);",
     "description": "Protractor browser.wait"
   },
-  "bwa-browserWaitForAngular": {
+  "bwa-waitForAngular": {
     "scope": "javascript,typescript",
     "prefix": "bwa",
-    "body": "await browser.waitForAngular(${1|false,true|});",
+    "body": "await browser.waitForAngular();",
     "description": "Protractor browser.waitForAngular"
+  },
+  "bwae-waitForAngularEnabled": {
+    "scope": "javascript,typescript",
+    "prefix": "bwae",
+    "body": "await browser.waitForAngularEnabled(${1|false,true|});",
+    "description": "Protractor browser.waitForAngularEnabled"
   }
   // "poset": {
   //   "scope": "javascript,typescript",
