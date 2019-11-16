@@ -17,6 +17,7 @@ exports.config = {
     chromeOptions: {
       args: [
         // "--headless",
+        // "--window-size=1920,1080",
         // "--incognito",
         // "--start-maximized"
       ]
