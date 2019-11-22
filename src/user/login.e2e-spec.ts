@@ -42,4 +42,26 @@ describe('登入功能的 E2E 測試', () => {
         expect(result).toContain('錯誤');
     });
 
+    describe('vue 官網查詢 SSR', () => {
+        it('輸入 SSR 後, 浮動畫面有 The Complete SSR Guide 字串', async () => {
+            // 重要!! 測試非 Angular 網頁要加這一行
+            // 注意: 這是全域設定, 會影響後續的測試案例
+            await browser.waitForAngularEnabled(false);
+
+            // vue 官網跑很慢 => 因為 vue 官網有設定離線機制, 會把整個站點載下來
+            await browser.get('https://vuejs.org/');
+
+            element(by.id('search-query-nav')).sendKeys('SSR');
+
+            // 重要!! 等待浮動畫面的查詢結果
+            browser.sleep(1000);
+
+            const result = element(by.id('algolia-autocomplete-listbox-0')).getText();
+            expect(result).toContain('The Complete SSR Guide');
+
+            // 恢復設定
+            await browser.waitForAngularEnabled(true);
+        });
+    });
+
 });
