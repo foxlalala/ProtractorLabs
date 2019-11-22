@@ -160,7 +160,7 @@
   "elementWithSendkey": {
     "scope": "javascript,typescript",
     "prefix": "element-by-sendKeys",
-    "body": "await element(by.${1|name,id,className,tagName|}('$2')).sendKeys('$3');"
+    "body": "await element(by.${1|name,id,css,className,tagName|}('$2')).sendKeys('$3');"
   },
   "dropdownClick1": {
     "scope": "javascript,typescript",
