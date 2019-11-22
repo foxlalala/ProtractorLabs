@@ -1,4 +1,4 @@
-import { browser, logging, $, $$, by, element, ExpectedConditions as EC } from 'protractor';
+import { browser } from 'protractor';
 
 describe('App', () => {
 
@@ -6,6 +6,12 @@ describe('App', () => {
 
   beforeEach(async () => {
     await browser.waitForAngularEnabled(true);
+  });
+
+  it('should open url', async () => {
+    await browser.get(url);
+    const result = await browser.getCurrentUrl();
+    expect(result).toContain(url);
   });
 
   it('should show title', async () => {
