@@ -1,7 +1,7 @@
 import * as path from 'path';
 import { browser, by, element } from 'protractor';
 
-fdescribe('練習表單操作', () => {
+describe('練習表單操作', () => {
     it('填寫表單-建立活動，驗證活動列表顯示「Protractor 實戰」', async () => {
         await browser.get('/events/new');
 
@@ -32,7 +32,7 @@ fdescribe('練習表單操作', () => {
         expect(result).toContain('PROTRACTOR 實戰');
     });
 
-    fit('填寫表單-建立議程，驗證議程列表顯示「Protractor 實戰」', async () => {
+    it('填寫表單-建立議程，驗證議程列表顯示「Protractor 實戰」', async () => {
         await browser.get('/events/1');
 
         await element(by.linkText('建立議程')).click();
