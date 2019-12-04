@@ -1,20 +1,15 @@
 import * as path from 'path';
 import { browser, by, element } from 'protractor';
 
-describe('練習表單操作', () => {
+fdescribe('練習表單操作', () => {
     it('填寫表單-建立活動，驗證活動列表顯示「Protractor 實戰」', async () => {
         await browser.get('/events/new');
 
         await element(by.id('name')).sendKeys('Protractor 實戰');
 
-        // await element(by.id('eventDate')).sendKeys('2019/11/16');
-        // 1997/12/31
-        await element(by.tagName('mat-datepicker-toggle')).click();
-        await element(by.css(`button[type="button"][aria-label^="Choose"]`)).click();
-        await element(by.css(`button[type="button"][aria-label^="Previous"]`)).click();
-        await element(by.cssContainingText('.mat-calendar-body-cell-content', '1997')).click();
-        await element(by.cssContainingText('.mat-calendar-body-cell-content', 'DEC')).click();
-        await element(by.cssContainingText('.mat-calendar-body-cell-content', '31')).click();
+        // await 點選日期19971231();
+        // 測試不會測套件, 所以正常都直接用 sendKeys 就可以
+        await element(by.id('eventDate')).sendKeys('2019/11/16');
 
         await element(by.id('eventTime')).sendKeys('早上');
         await element(by.id('eventPrice')).sendKeys('500');
@@ -50,3 +45,12 @@ describe('練習表單操作', () => {
         expect(result).toContain('Protractor 表單練習');
     });
 });
+async function 點選日期19971231() {
+    await element(by.tagName('mat-datepicker-toggle')).click();
+    await element(by.css(`button[type="button"][aria-label^="Choose"]`)).click();
+    await element(by.css(`button[type="button"][aria-label^="Previous"]`)).click();
+    await element(by.cssContainingText('.mat-calendar-body-cell-content', '1997')).click();
+    await element(by.cssContainingText('.mat-calendar-body-cell-content', 'DEC')).click();
+    await element(by.cssContainingText('.mat-calendar-body-cell-content', '31')).click();
+}
+
