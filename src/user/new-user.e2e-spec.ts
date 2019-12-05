@@ -1,6 +1,6 @@
 import { browser, by, element, ExpectedConditions as EC } from 'protractor';
 
-fdescribe('add a new user', () => {
+describe('add a new user', () => {
     it('驗證網址導向 http://localhost:4200/events', async () => {
         await browser.get('/user/new');
 
