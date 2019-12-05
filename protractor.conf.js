@@ -69,5 +69,12 @@ exports.config = {
         }
       }
     });
+
+    const HtmlReporter = require('protractor-beautiful-reporter');
+    jasmine.getEnv().addReporter(new HtmlReporter({
+      baseDirectory: 'tmp/screenshots',
+      takeScreenShotsOnlyForFailedSpecs: false,
+      preserveDirectory: false
+    }).getJasmine2Reporter());
   }
 };

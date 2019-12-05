@@ -2,7 +2,7 @@ import * as path from 'path';
 import { browser, by, element } from 'protractor';
 
 describe('練習表單操作', () => {
-    fit('填寫表單-建立活動，驗證活動列表顯示「Protractor 實戰」', async () => {
+    it('填寫表單-建立活動，驗證活動列表顯示「Protractor 實戰」', async () => {
         await browser.get('/events/new');
 
         await element(by.id('name')).sendKeys('Protractor 實戰');
@@ -24,7 +24,7 @@ describe('練習表單操作', () => {
         await element(by.buttonText('儲存')).click();
 
         const result = await element(by.tagName('ng-component')).getText();
-        expect(result).toContain('xPROTRACTOR 實戰');
+        expect(result).toContain('PROTRACTOR 實戰');
     });
 
     it('填寫表單-建立議程，驗證議程列表顯示「Protractor 實戰」', async () => {
