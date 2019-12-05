@@ -5,7 +5,8 @@
   "main": "protractor.conf.js",
   "scripts": {
     "postinstall": "webdriver-manager update",
-    "test": "protractor protractor.conf.js"
+    "test": "protractor protractor.conf.js",
+    "golden": "protractor protractor-goldens.conf.js"
   },
   "keywords": [],
   "author": "Will <doggy.huang@gmail.com>",

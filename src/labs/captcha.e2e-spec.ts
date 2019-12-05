@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-fdescribe('the user submit a questionnaire', () => {
+describe('the user submit a questionnaire', () => {
     it('驗證畫面上顯示 驗證碼正確', async () => {
         await browser.get('/labs/captcha');
         await browser.wait(waitForKeyIn, 10000);

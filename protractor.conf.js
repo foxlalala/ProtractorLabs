@@ -24,7 +24,8 @@ exports.config = {
     }
   },
 
-  // SELENIUM_PROMISE_MANAGER: false,
+  // 使用 async / await (避免使用內建的 control flow)
+  SELENIUM_PROMISE_MANAGER: false,
 
   directConnect: true, // 設定直接控制瀏覽器
   //seleniumServerJar: '../node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-3.141.59.jar',
