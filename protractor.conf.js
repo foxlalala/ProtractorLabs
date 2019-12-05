@@ -56,7 +56,18 @@ exports.config = {
     /**
      * @type { import("protractor").ProtractorBrowser }
      */
-    // const browser = global['browser'];
-    // await browser.manage().timeouts().implicitlyWait(2000);
+    const browser = global['browser'];
+    await browser.manage().timeouts().implicitlyWait(2000);
+
+    jasmine.getEnv().addReporter({
+      specDone: async (result) => {
+        if (result.failedExpectations.length > 0) {
+          let png = await browser.takeScreenshot();
+          var stream = require('fs').createWriteStream("./src/assets/failuretests/failureScreenshot.png");
+          stream.write(new Buffer(png, 'base64'));
+          stream.end();
+        }
+      }
+    });
   }
 };
