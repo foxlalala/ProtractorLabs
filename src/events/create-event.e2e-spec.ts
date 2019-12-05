@@ -1,7 +1,7 @@
 import * as path from 'path';
 import { browser, by, element } from 'protractor';
 
-fdescribe('練習表單操作', () => {
+describe('練習表單操作', () => {
     it('填寫表單-建立活動，驗證活動列表顯示「Protractor 實戰」', async () => {
         await browser.get('/events/new');
 
