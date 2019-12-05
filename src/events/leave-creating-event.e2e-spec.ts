@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-fdescribe('測試切換視窗', () => {
+describe('測試切換視窗', () => {
     it('驗證導頁到 http://localhost:4200/events', async () => {
         await browser.get('/events/new');
 
