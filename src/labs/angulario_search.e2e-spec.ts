@@ -1,6 +1,6 @@
 import { browser, by, element, ExpectedConditions as EC } from 'protractor';
 
-fdescribe('the user does search on angular.io', () => {
+describe('the user does search on angular.io', () => {
     it('連線到 angular 官網', async () => {
         const angularUrl = 'https://angular.io/';
         await browser.get(angularUrl);
